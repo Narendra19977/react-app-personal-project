@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTodosContext } from "../context/todoContext";
 import { styles } from "../style/todoForm.style";
-interface TodoFormPropsType {
-  todo: string;
-  onChangeTodo: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-function TodoForm({ todo, onChangeTodo }: TodoFormPropsType) {
-  const { addTodo } = useTodosContext();
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+
+function TodoForm() {
+  const [todo,setTodo]=useState("")
+  const dispatch=useDispatch()
+  const handleAddTodo=(e:React.FormEvent<HTMLFormElement>)=>{
+    e.preventDefault()
+    dispatch({type:"todos/addTodo",payload:{text:todo}})
+  }
   return (
-    <form onSubmit={(e) => addTodo(e, todo)} style={styles.todoFormContainer}>
+    <form onSubmit={handleAddTodo}>
       <input
         type="text"
-        onChange={onChangeTodo}
+        onChange={(e)=>setTodo(e.target.value)}
         value={todo}
         placeholder="Enter a todo..."
         style={styles.todoFormInput}

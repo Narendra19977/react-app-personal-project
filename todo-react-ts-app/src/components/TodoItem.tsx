@@ -1,17 +1,20 @@
 import { Fragment } from "react";
 import { styles } from "../style/todoList.style";
-import { useTodosContext } from "../context/todoContext";
+import { useDispatch } from "react-redux";
 interface TodosItemPropsType {
   id: number;
   todo: string;
 }
 function TodosItem({ id, todo }: TodosItemPropsType) {
-  const { removeTodo } = useTodosContext();
+  const dispatch=useDispatch()
+  const handleRemoveTodo=(id:number)=>{
+    dispatch({type:'todos/removeTodo',payload:{id}})
+  }
   return (
     <Fragment>
-      <li key={id} style={styles.todoListItem}>
+      <li style={styles.todoListItem}>
         <span style={styles.todoListText}>{todo}</span>
-        <button onClick={() => removeTodo(id)} style={styles.todoListButton}>
+        <button onClick={() => handleRemoveTodo(id)} style={styles.todoListButton}>
           Delete
         </button>
       </li>

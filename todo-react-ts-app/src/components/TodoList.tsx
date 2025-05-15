@@ -1,14 +1,15 @@
-import { useTodosContext } from "../context/todoContext";
+import { RootState } from "../redux/store";
 import { styles } from "../style/todoList.style";
 import { TodosItem } from "./TodoItem";
+import { useSelector, UseSelector } from "react-redux";
 
 function TodoList() {
-  const { todos, removeTodo } = useTodosContext();
+const todos= useSelector((state:RootState)=>state.todoList.todos)
 
   return (
     <ul style={styles.todoListContainer as React.CSSProperties}>
-      {todos.map(({ id, todo }) => (
-        <TodosItem id={id} todo={todo} />
+      {todos.map((todo) => (
+        <TodosItem key={todo.id} todo={todo.text} id={todo.id}/>
       ))}
     </ul>
   );
