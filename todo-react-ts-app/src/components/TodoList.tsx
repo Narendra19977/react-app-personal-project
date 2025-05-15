@@ -1,10 +1,12 @@
 import { RootState } from "../redux/store";
 import { styles } from "../style/todoList.style";
 import { TodosItem } from "./TodoItem";
-import { useSelector, UseSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function TodoList() {
 const todos= useSelector((state:RootState)=>state.todoList.todos)
+
+
 
   return (
     <ul style={styles.todoListContainer as React.CSSProperties}>

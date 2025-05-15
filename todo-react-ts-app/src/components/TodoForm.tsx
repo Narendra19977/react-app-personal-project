@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { useTodosContext } from "../context/todoContext";
 import { styles } from "../style/todoForm.style";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
+import { useDispatch } from "react-redux";
 
 function TodoForm() {
   const [todo,setTodo]=useState("")
