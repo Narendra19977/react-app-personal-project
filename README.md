@@ -1,5 +1,5 @@
 # react-app-personal-project
-Currently this repos having 4 branches each contain individual application
+Currently this repositries having 4 branches each contain individual application
 
 ## Ecommerce React APP : https://github.com/Narendra19977/react-app-personal-project/tree/feat/ecommerce-react-ts-app
 
