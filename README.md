@@ -9,4 +9,4 @@ Currently this repositries having 4 branches each contain individual application
 
 ## Todo React APP using Redux toolkit : https://github.com/Narendra19977/react-app-personal-project/tree/feta/todo-react-ts-app-redux-toolkit
 
-## https://github.com/Narendra19977/learning-support-directory
+## Learning Support Directory : https://github.com/Narendra19977/learning-support-directory
